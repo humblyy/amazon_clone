@@ -6,20 +6,19 @@ import { CiLocationOn } from "react-icons/ci";
 import { BsSearch } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 import Lower from '../lower_header/Lower';
-
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <>
 
 
-
   <section className={classes.inner_container}>
 <div className={classes.first_section}>
-<a href="/">
+<Link to="/">
   {/* amazon logo */}
   <img src="https://pngimg.com/uploads/amazon/small/amazon_PNG25.png" alt="amazon logo" />
-</a>
+</Link>
 
 
 <div className={classes.delivery}>
@@ -44,40 +43,40 @@ function Header() {
   <option value="">All</option>
 </select>
 <input type="text" placeholder='Search Amazon' />
-<BsSearch size={25}/>
+<BsSearch size={38}/>
   </div>
 
 
 
 {/* third section */}
   <div className={classes.order}>
-<a className={classes.language}>
+<Link className={classes.language} to='/'>
   <img src={us_flag} alt="" />
 <select name="" id="">
     <option value="">EN</option>
 </select>
-</a>
+</Link>
 
 
   {/* sign in */}
 
-  <a href="">
+  <Link to="/login">
     <p>Hello,Sign In</p>
-    <span>Accounts & Lists</span>
-  </a>
+    <p>Accounts & Lists</p>
+  </Link>
 
   {/* orders and returns */}
-  <a href="">
+  <Link to="/orders">
     <p>returns</p>
     <span>& Orders</span>
-  </a>
+  </Link>
 
   {/* cart icon */}
-  <a href="" className={classes.cart}>
+  <Link to="/cart" className={classes.cart}>
    <FiShoppingCart size={35}/>
     <span>0</span>
      <p>Cart</p>
-  </a>
+  </Link>
 
 
   </div>
@@ -85,7 +84,7 @@ function Header() {
 
 
 <Lower/>
-    
+
     </>
 
   )

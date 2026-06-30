@@ -2,8 +2,7 @@ import React from 'react'
 import {Carousel} from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import classes from "./carouselEffect.module.css"
-
-import { i
+import { img } from './img/data'
 function CarouselEffect() {
   return (
     <div>
@@ -15,7 +14,7 @@ function CarouselEffect() {
       >
       {
         img.map((singleImage,index)=> {
-           return <img src={singleImage}/>
+           return <img src={singleImage} alt='banner image'/>
 
           } )
       }

@@ -1,0 +1,85 @@
+.cardContainer {
+
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-decoration: none;
+  position: relative;
+  color: black;
+  padding: 30px;
+}
+
+.cardContainer img{
+    object-fit: contain;
+    width: 100%;
+/* max-width: 100%; */
+    height: 180px;
+    padding: 20px;
+}
+.cardContainer .btn{
+
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    position: absolute;
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 5px 10px;
+    display: none;
+  
+}
+.cardContainer:hover .btn{
+    display: block;
+}
+.btn:hover{
+    background-color: var(--primary-shade);
+}
+
+.rating{
+ 
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+  
+  
+}
+
+.flexed{
+  
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    height: 50vh;
+    /* height: fit-content; */
+    box-shadow: none;
+overflow: none;
+}
+.flexed h3{
+    padding: 20px 0;
+}
+.flexed .btn{
+    display: block;
+    width: 150px;
+    margin-right: 40px;
+    position: static;
+
+}
+.flexed img{
+    /* width: 100%; */
+    width: 300px;
+    /* max-width: max-content; */
+    /* max-height: max-content; */
+    height: auto;
+
+}
+@media (max-width:768px) {
+    .flexed{
+        display: flex;
+        flex-direction: column;
+    }
+
+}

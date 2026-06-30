@@ -61,7 +61,7 @@ font-weight: bold;
 .search input{
     border: 1px solid white;
     width: 100%;
-    margin-right: -2px;
+    margin-right: -8px;
 }
 .search svg{
  padding: 7px;  
@@ -85,6 +85,7 @@ gap: 10px;
     padding: 4px;
 text-decoration: none;
 color: white;
+
 }
 .order p{
     font-size: 12px;
