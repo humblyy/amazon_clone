@@ -32,7 +32,11 @@ axios.get(`${productUrl}/products/category/${categoryName}`)
         <hr />
         {isLoading ? (<LoadingEffect />) : (<div className={classes.productContainer}>
             {results?.map((product) => {
-              return <SingleProduct productData={product} key={product.id} />;
+              return <SingleProduct 
+              productData={product} 
+              key={product.id} 
+             cartButton={true}
+              />;
             })}
           </div>
         )}

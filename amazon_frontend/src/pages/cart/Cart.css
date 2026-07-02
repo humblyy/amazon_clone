@@ -1,0 +1,126 @@
+.outerCartContainer{
+    display: flex;
+     justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+   
+}
+.outerCartContainer img{
+    width: 100px !important;
+   
+}
+.innerCartContainer{
+    padding: 20px;
+    
+}
+.innerCartContainer h2,
+.innerCartContainer h3{
+    padding: 10px;
+}
+ hr{
+margin: 10px;
+}
+.subtotal{
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+    gap: 10px;
+    background-color: rgb(242,241, 241);
+    height: 80%;
+    min-width: 300px;
+    padding: 20px;
+    border: 1px solid rgb(193, 193, 193);
+    border-radius: 5px;
+}
+.subtotal a{
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 100%;
+    border: none;
+}
+.subtotal a:hover{
+    background-color: var(--primary-shade);
+}
+.subtotal div,
+.subtotal span{
+    display: flex;
+    gap: 10px;
+}
+.outerCartContainer div:not(.subtotal){
+    height: auto !important;
+}
+
+
+.addRemove{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.addRemoveButton{  
+border: 5px solid var(--primary-color);
+border-radius: 8px;
+width: fit-content;
+    display:flex;
+    gap: 5px;
+place-items: center;
+    flex-direction:row;
+   
+
+   
+   
+}
+
+.button{
+    
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 5px 17px;
+    border: none;
+}
+.button:hover svg{
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+@media (max-width:900px) {
+.subtotal{
+    min-width: 120px;
+    height: 100px;
+    padding: 3px;
+    gap: 2px 3px;
+    top: 0;
+}
+.subtotal div,
+.subtotal span{
+gap: 0;
+}
+.subtotal a{
+    font-size: 12px;
+    padding: 2px 0;
+}
+.outerCartContainer{
+    gap: 2px;
+}
+
+}
+
+
+
+  
+
+
+
+
+/* @media (max-width:720px) {
+    .subtotal{
+        width: 100%;
+    }
+} */

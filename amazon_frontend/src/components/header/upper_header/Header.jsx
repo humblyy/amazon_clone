@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from "./header.module.css"
 import us_flag from "../../../assets/images/us_flag.png"
 import { CiLocationOn } from "react-icons/ci";
@@ -7,10 +7,20 @@ import { BsSearch } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 import Lower from '../lower_header/Lower';
 import { Link } from 'react-router-dom';
+import { Cartcontext } from '../../contextProvider/ContextProvider';
 
 function Header() {
+  const [{basket},dispatch]=useContext(Cartcontext)
+
+  //display total item on cart
+  const totalItem=basket?.reduce((amount,item)=>{
+    return item.amount + amount
+  },0)
+  console.log(basket)
   return (
     <>
+<section className={classes.outer_container}>
+
 
 
   <section className={classes.inner_container}>
@@ -74,7 +84,7 @@ function Header() {
   {/* cart icon */}
   <Link to="/cart" className={classes.cart}>
    <FiShoppingCart size={35}/>
-    <span>0</span>
+    <span>{totalItem}</span>
      <p>Cart</p>
   </Link>
 
@@ -84,7 +94,7 @@ function Header() {
 
 
 <Lower/>
-
+</section>
     </>
 
   )

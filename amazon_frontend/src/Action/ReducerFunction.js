@@ -1,0 +1,57 @@
+
+import {type} from "./CartActions"
+
+
+export const initialState={
+    basket:[]
+}
+export const reducer=(state,action)=>{
+    switch (action.type) {
+        case type.ADD_TO_CART:
+            // return {
+            //     ...state,
+            //     basket:[...state.basket,action.item]
+            // }
+            // check if item exists or not before adding-avoid duplicate items to display
+            const itemExist=state.basket.find((item)=>item.id===action.item.id)
+            if(!itemExist){
+                return {
+                        ...state,
+                    basket:[...state.basket,{...action.item,amount:1}]
+                    }
+            }
+            //adding to the existing item
+            else{
+                const addItem=state.basket.map((item)=>{
+                  return  item.id===action.item.id?{...item,amount:item.amount + 1}:item
+                })
+                return {
+                  ...state,
+                  basket:addItem
+                }
+          
+            }
+            case type.REMOVE_FROM_CART:
+                const index=state.basket.findIndex(item=>item.id===action.id)
+                let newBasket=[...state.basket]
+                if(index>=0){
+                    if(newBasket[index].amount>1){
+                        newBasket[index]={...newBasket[index],amount:newBasket[index].amount - 1}
+                    }else{
+                        newBasket.splice(index,1)
+                    }
+                }
+                return {
+                    ...state,
+                    basket:newBasket
+                }
+    
+        default:
+        return state
+    }
+   
+}
+
+
+
+// const [state, dispatch] = useReducer(reducer,initialState)

@@ -33,6 +33,7 @@ useEffect(()=>{
                 <SingleProduct
                   productData={oneProduct}
                   key={oneProduct.id}
+               cartButton={true}
                 
                 />
               );

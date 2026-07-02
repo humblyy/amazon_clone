@@ -137,7 +137,15 @@ border-radius: 2px;
 
 
 @media (max-width:720px) {
-    .order{
-        display: none;
+    .outer_container{
+        width: 100%;
     }
+    .first_section img{
+        margin-left: 4px;
+    }
+}
+.outer_container{
+    position: sticky;
+    z-index: 1;
+    top: 0;
 }

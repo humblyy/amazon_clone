@@ -12,3 +12,11 @@
 
 
 }
+
+@media (max-width:720px) {
+    .container{
+        width: 100%;
+        display: grid;
+        grid-template-columns:auto auto;
+    }
+}

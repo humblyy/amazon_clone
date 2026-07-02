@@ -36,3 +36,11 @@ max-height: 250px;
     color: rgb(9, 132, 209);
   
 } 
+
+@media (max-width:1300px) {
+    .container{
+        width: 100%;
+        margin: 10px 10px;
+        
+    }
+}

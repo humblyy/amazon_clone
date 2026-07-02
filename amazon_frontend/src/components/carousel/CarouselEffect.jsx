@@ -5,16 +5,16 @@ import classes from "./carouselEffect.module.css"
 import { img } from './img/data'
 function CarouselEffect() {
   return (
-    <div>
+    <div >
       <Carousel
-        autoPlay={false}
-        infiniteLoop={false}
+        autoPlay={true}
+        infiniteLoop={true}
         showIndicators={false}
         showThumbs={false}
       >
       {
-        img.map((singleImage,index)=> {
-           return <img src={singleImage} alt='banner image'/>
+        img?.map((singleImage,index)=> {
+           return <img src={singleImage} alt='banner image' key={index}/>
 
           } )
       }
