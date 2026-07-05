@@ -91,6 +91,18 @@ place-items: center;
 }
 
 @media (max-width:900px) {
+    .addRemove{
+        position: relative;
+    }
+    .addRemoveButton{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+
+   
+       
+    }
 .subtotal{
     min-width: 120px;
     height: 100px;

@@ -1,9 +1,10 @@
 
 import {type} from "./CartActions"
 
-
 export const initialState={
-    basket:[]
+    basket:[],
+    // for user authentication on firebase
+    user:null
 }
 export const reducer=(state,action)=>{
     switch (action.type) {
@@ -45,6 +46,14 @@ export const reducer=(state,action)=>{
                     ...state,
                     basket:newBasket
                 }
+            case type.SET_USER:
+                return {
+                  ...state,
+                  user: action.user,
+                };
+              
+
+
     
         default:
         return state
