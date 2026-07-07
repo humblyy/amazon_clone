@@ -18,8 +18,8 @@ useEffect(()=>{
         setIsLoading(false);
       }) 
       .catch((err) => {
-        setIsLoading(false)
         console.log(err, "cannot fetch");
+        setIsLoading(false)
       });
 },[])
 

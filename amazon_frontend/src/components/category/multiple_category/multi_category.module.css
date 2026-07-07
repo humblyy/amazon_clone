@@ -4,19 +4,27 @@
     box-sizing: border-box;
 }
 .container{
+    max-width: 1400px;
  display: grid;
- grid-template-columns: repeat(4,1fr);
+ grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+ margin-right: auto;
+ margin-left: auto;
+
  place-items: center;
  margin-top: -10%;
  position: relative;
+margin-right: 50px;
+margin-left: 50px;
+ gap: 30px;
+
 
 
 }
 
-@media (max-width:720px) {
+/* @media (max-width:720px) {
     .container{
         width: 100%;
         display: grid;
         grid-template-columns:auto auto;
     }
-}
+} */

@@ -6,28 +6,31 @@
   position: relative;
   color: black;
   padding: 30px;
+  text-align: center;
 }
 
 .cardContainer img{
     object-fit: contain;
     width: 100%;
 /* max-width: 100%; */
-    height: 180px;
+    height: 140px !important;
     padding: 20px;
 }
 .cardContainer .btn{
-
-    left: 0;
+    display: flex;
+margin-right: auto;
+margin-left: auto;
     bottom: 0;
     cursor: pointer;
     background-color: var(--primary-color);
     position: absolute;
+
     font-weight: 600;
     border: none;
     border-radius: 25px;
-    width: 100%;
-    margin: 10px 0;
-    padding: 5px 10px;
+    width: 70%;
+    margin: 10px 5px;
+    padding: 3px 10px;
     display: none;
   
 }
@@ -50,6 +53,7 @@
 
 .flexed{
   
+  
     display: flex;
     gap: 50px;
     width: 100%;
@@ -60,6 +64,7 @@ overflow: none;
 }
 .flexed h3{
     padding: 20px 0;
+   
 }
 .flexed .btn{
     display: block;
@@ -69,6 +74,7 @@ overflow: none;
 
 }
 .flexed img{
+
     /* width: 100%; */
     width: 300px;
     /* max-width: max-content; */
@@ -80,6 +86,35 @@ overflow: none;
     .flexed{
         display: flex;
         flex-direction: column;
+        padding: 0 30px;
     }
+    .description{
+        font-size: 12px;
+    }
+  .cardContainer div{
+    padding: 0;
 
+  }
+  .cardContainer .btn{
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+
+
+
+
+
+}
+.cardContainer div h3{
+    
+font-size: 17px;
+text-align: center;
+padding: 10px;
+text-wrap: balance;
+}
+.description{
+    text-align: left;
+    padding-left: 20px;
 }

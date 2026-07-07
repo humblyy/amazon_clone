@@ -8,7 +8,7 @@ import { type } from '../../../Action/CartActions';
 
 
 
-function SingleProduct({productData,flex,cartButton}) {
+function SingleProduct({productData,flex,cartButton,product_description}) {
     // if(productData){
 // console.log(productData)
 // console.log(type)
@@ -28,42 +28,45 @@ const addToCart=()=>{
 
 
   return (
-    <div className={`${classes.cardContainer} ${flex?classes.flexed:''}`}>
-            <a href={`/products/${id}`}>
-                <img src={image} alt="" />
-            </a>
+    <div className={`${classes.cardContainer} ${flex ? classes.flexed : ""}`}>
+      <a href={`/products/${id}`}>
+        <img src={image} alt="" />
+      </a>
       <div>
-            <h3>
-            {title}
-            {/* title */}
-            </h3>
+        <h3>
+          {title}
+          {/* title */}
+        </h3>
 
-                {flex&&<div style={{maxWidth:"650px"}}>   
+        {product_description && (
+          <div style={{ maxWidth: "650px" }} className={classes.description}>
             {description}
             {/* description */}
-            </div>}
-            
-            <div className={classes.rating}>
+          </div>
+        )}
 
-                {/* rating */}
-                <Rating value={rating?.rate} precision={0.1} />
-                {/* rating number */}
-                <small>{rating?.count}</small>
+        <div className={classes.rating}>
+          {/* rating */}
+          <Rating
+            value={rating?.rate}
+            precision={0.1}
+            style={{ textAlign: "left", paddingLeft: "20px" }}
+          />
+          {/* rating number */}
+          <small>{rating?.count}</small>
+        </div>
 
-            </div>
+        <div style={{ textAlign: "left", paddingLeft: "20px" }}>
+          {/* price */}
+          <FormattedCurrency amount={price} />
+        </div>
 
-             <div >
-                {/* price */}
-                <FormattedCurrency amount={price} />
-            </div>
-
-          {
-            cartButton &&  <button className={classes.btn} onClick={addToCart}>add to cart</button>
-          }
-
+        {cartButton && (
+          <button className={classes.btn} onClick={addToCart}>
+            add to cart
+          </button>
+        )}
       </div>
-
-
     </div>
   );
     // }

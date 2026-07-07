@@ -48,6 +48,7 @@ const decrement=(id)=>{
                   key={i}
                   productData={item}
                   flex={true}
+                  product_description={true}
                   cartButton={false}
                 />
                 <div className="addRemoveButton">
@@ -69,8 +70,8 @@ const decrement=(id)=>{
         {basket?.length !== 0 && (
           <div className="subtotal">
             <div>
-              <p>Subtotal({basket?.length} items) </p>
-              <FormattedCurrency amount={total} />
+              <p style={{fontWeight:"bolder"}}>Subtotal({basket?.length} items) </p>
+              <FormattedCurrency amount={total}  />
             </div>
             <span>
               <input type="checkbox"></input>

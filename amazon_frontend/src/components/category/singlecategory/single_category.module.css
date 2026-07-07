@@ -4,19 +4,25 @@
     box-sizing: border-box;
 }
 .container{
+
      position: relative;
     height: 310px;
-   width: 310px;
+   width: 250px;
     background-color: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .container img{
-
-  max-width: 100%;
+padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+width: 100%;
+/* min-width: 280px;
+max-height: 250px; */
 max-height: 250px;
- object-fit: contain;
-padding-left: 50px;
+ object-fit: fill;
+
+/* padding-left: 50px; */
 
 }
     
@@ -27,7 +33,7 @@ padding-left: 50px;
 }
 .container h2,
 .container p{
-    padding: 5px;
+    padding-top: 5px;
     margin-left: 15px;
 }
 .container p{
@@ -38,13 +44,13 @@ padding-left: 50px;
   
 } 
 
-@media (max-width:1300px) {
+/* @media (max-width:1300px) {
     .container{
         width: 100%;
         margin: 10px 10px;
         
     }
-}
+} */
 .container p{
    position: absolute;
     bottom: 0;

@@ -1,0 +1,136 @@
+.payment_header{
+    background-color:rgb(236, 240, 238);
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+}
+.payment_method{
+    padding: 30px;
+}
+.address{
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    padding: 30px;
+    /* justify-content: center; */
+}
+
+.address h3{
+    min-width: 300px;
+}
+.item{
+ 
+    display: flex;
+    
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+  
+}
+
+.item h3{
+   
+    min-width: 100px;
+}
+
+.item img{
+    height: auto;
+}
+.item div{
+    height: auto !important;
+}
+.item img{
+margin-right: -50px;
+    width: 90px !important;
+}
+.card_container{
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+    /* justify-content: center; */
+}
+.card_container h3{
+    min-width: 100px;
+}
+
+.card_number{
+    max-width: 350px;
+    width: 100%;
+}
+
+
+
+.price{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.price button{
+    border: none;
+    margin-top: 20px;
+  max-width: 200px;
+    background-color: var(--primary-color);
+    padding: 8px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+.price button:hover{
+ 
+    background-color: var(--primary-shade);
+
+}
+
+@media (max-width:760px) {
+    .card_container{
+        display: flex;
+        flex-direction: column;
+      justify-content: center;
+    }
+    .address{
+        flex-direction: column;
+    }
+   .item{
+    flex-direction: column;
+    padding: 0;
+   }
+   .item h3{
+    text-align: center;
+    min-width: 100px;
+}
+.address h3{
+    text-align: center;
+}
+
+.item{
+    justify-content: center;
+}
+.item img{
+margin-bottom: -90px;
+   
+}
+
+
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.title{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+}

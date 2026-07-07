@@ -1,0 +1,33 @@
+.outer_container{
+    background-color: #efeeee;
+    padding: 30px;
+}
+.inner_container{
+    background-color: white;
+    padding: 20px;
+}
+.inner_container h2{
+    padding: 5px 20px;
+    border-bottom: 2.4px solid var(--primary-shade);
+}
+
+.inner_container p{
+    padding: 15px;
+}
+.inner_container img{
+    width: 100px !important;
+}
+.inner_container div{
+    height: auto !important;
+}
+
+@media(max-width:768px){
+   
+.inner_container img{
+margin-bottom: -90px !important;
+}
+
+}
+h4{
+    padding-top: 10px;
+}

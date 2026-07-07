@@ -7,6 +7,9 @@ import { type } from "./Action/CartActions";
 import { Cartcontext } from "./components/contextProvider/ContextProvider";
 import { useEffect } from "react";
 
+
+
+
 //handling when user logged out and on page refresh
 function App() {
   const [{ user }, dispatch] = useContext(Cartcontext);
@@ -30,7 +33,9 @@ useEffect(()=>{
 
   return (
     <div className="App">
-      <Routing />
+     
+        <Routing />
+      
     </div>
   );
 }

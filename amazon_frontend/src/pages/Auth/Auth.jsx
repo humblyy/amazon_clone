@@ -9,11 +9,11 @@ import { type } from '../../Action/CartActions';
 
 import {ClipLoader } from "react-spinners"  //for loading effect
 import { useNavigate } from 'react-router-dom'; //for moving to different pages like home page
+import { useLocation } from 'react-router-dom';
+
 
 
 function Auth() {
-
-
 
 const [email,setEmail]=useState("")
 const [password,setPassword]=useState("")
@@ -28,8 +28,8 @@ const [loading,setLoading]=useState({
   sign_up:false
 })
 const navigate=useNavigate()
-
-
+const navigationData=useLocation()
+console.log(navigationData)
 // console.log(password)
 
 //authenticating the user
@@ -47,13 +47,13 @@ if(e.target.name==="signin"){
       user:userData.user
     })
     setLoading({ ...loading, sign_in: false });
-    navigate('/')  //after sign in move to home page
+    navigate(navigationData?.state?.redirect || '/')  //after sign in move to home page
   })
   .catch((error)=>{
     setLoading({ ...loading, sign_in: false });
      console.log(error);
     //  setError(error.message)
-    setError(error.code.split("/")[1].split("-").join(" "));
+    setError(error.message.split("/")[1].split("-").join(" "));
   }
    )
 
@@ -68,14 +68,14 @@ createUserWithEmailAndPassword(auth,email,password)
     user: userData.user,
   });
   setLoading({ ...loading, sign_up:false });
-  navigate('/')
+  navigate(navigationData?.state?.redirect || '/')
 }
   )
 .catch((error)=>{
   setLoading({...loading,sign_up:false})
   console.log(error)
-  setError(error.code.split("/")[1].split("-").join(" "))
-  console.log(error.code.split("/")[1].split("-").join(" "));
+  setError(error.message.split("/")[1].split("-").join(" "))
+  console.log(error.message.split("/")[1].split("-").join(" "));
 })
 }
 
@@ -91,6 +91,9 @@ createUserWithEmailAndPassword(auth,email,password)
       </Link>
       <div className={classes.form_container}>
         <h1>Sign In</h1>
+        {
+          navigationData?.state?.message && (<p style={{color:"#C10115",padding:"6px",textAlign:"center"}}>{navigationData?.state?.message}</p>)
+        }
         <form action="">
           <div>
             <label htmlFor="email">E-mail</label>
@@ -104,7 +107,7 @@ createUserWithEmailAndPassword(auth,email,password)
 
           <div>
             <label htmlFor="password">Password</label>
-            <input
+            <input 
               type="password"
               id="password"
               onChange={(e) => setPassword(e.target.value)}

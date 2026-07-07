@@ -31,6 +31,7 @@ useEffect(()=>{
         {isLoading?<LoadingEffect/>: <SingleProduct 
         productData={product_data}
         flex={true}
+        product_description={true}
        cartButton={true}
         />
         }
