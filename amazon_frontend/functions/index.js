@@ -37,7 +37,7 @@ const express=require("express")
 const dotenv=require("dotenv")
 dotenv.config()
 const cors=require("cors")
-// const stripe=require("stripe")(process.env.STRIPE_KEY)
+const stripe=require("stripe")(process.env.STRIPE_KEY)
 
 const app=express()
 // setGlobalOptions({ maxInstances: 10 });
@@ -56,7 +56,7 @@ app.get('/',(req,res)=>{
 
 //post request price is sent from basket
 app.post('/payment/create',async(req,res) => {
-const stripe=require("stripe")(process.env.STRIPE_KEY)
+// const stripe=require("stripe")(process.env.STRIPE_KEY)
     const total= parseInt(req.query.total);
     if(total>0){
         // console.log("received",total)
