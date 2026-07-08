@@ -51,9 +51,11 @@ if(e.target.name==="signin"){
   })
   .catch((error)=>{
     setLoading({ ...loading, sign_in: false });
-     console.log(error);
+     console.log("this is sign in ",error);
     //  setError(error.message)
-    setError(error.message.split("/")[1].split("-").join(" "));
+    console.log("this is from message",error.message)
+    console.log("this is from code",error.code)
+    setError(error.code.split("/")[1].split("-").join(" "));
   }
    )
 
@@ -73,9 +75,10 @@ createUserWithEmailAndPassword(auth,email,password)
   )
 .catch((error)=>{
   setLoading({...loading,sign_up:false})
-  console.log(error)
-  setError(error.message.split("/")[1].split("-").join(" "))
-  console.log(error.message.split("/")[1].split("-").join(" "));
+
+  setError(error.code.split("/")[1].split("-").join(" "))
+  console.log("from message",error.message);
+  console.log("from code",error.code);
 })
 }
 
