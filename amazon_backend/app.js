@@ -1,55 +1,57 @@
 
-const express = require("express");
-const dotenv = require("dotenv");
-const cors = require("cors");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-dotenv.config();
-
-const app = express();
-
-app.use(cors({ origin: true }));
-app.use(express.json());
 
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "success",
-  });
-});
 
 
-app.post("/payment/create", async (req, res) => {
-  try {
-    const total_price = Number(req.query.total_price);
 
-    if (!Number.isFinite(total_price) || total_price <= 0) {
-      return res.status(400).json({
-        message: "Total price must be greater than 0",
-      });
+//code starts here
+const express=require("express")
+const dotenv=require("dotenv")
+dotenv.config()
+const cors=require("cors")
+const stripe=require("stripe")(process.env.STRIPE_SECRET_KEY)
+
+const app=express()
+app.use(cors({origin:true}))
+app.use(express.json())
+
+
+//get request from react
+app.get('/',(req,res)=>{
+  
+    res.status(200).json({
+        message:"success"
+    })
+})
+
+//post request price is sent from basket
+app.post('/payment/create',async(req,res) => {
+    const total_price=req.query.total_price
+    if(total_price>0){
+        // console.log("received",total)
+        //    res.send(total)
+
+        const payment_intent=await stripe.paymentIntents.create({
+            amount:total_price,
+            currency:"usd"
+        })
+        // res.status(200).json(payment_intent)
+        res.status(200).json({
+            clientSecret:payment_intent.client_secret
+        })
+    }
+    else{
+          res.status(404).json({
+            message:"total price must be greater than 0"
+          })
     }
 
-   
-    const amount = Math.round(total_price * 100);
-
-    const payment_intent = await stripe.paymentIntents.create({
-      amount,
-      currency: "usd",
-    });
-
-    return res.status(200).json({
-      clientSecret: payment_intent.client_secret,
-    });
-  } catch (error) {
-    console.error("Stripe payment error:", error.message);
-
-    return res.status(500).json({
-      message: "Unable to create payment",
-    });
-  }
-});
+})
 
 
-app.listen(3000, () => {
-  console.log("Server is running at http://localhost:3000");
-});
+app.listen(3000,(err)=>{
+    if(err) throw err
+    else{
+        console.log("server is running at http://localhost:3000")
+    }
+})
