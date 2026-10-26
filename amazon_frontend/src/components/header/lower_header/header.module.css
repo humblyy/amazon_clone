@@ -1,32 +1,39 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Prevents padding from causing overflow */
 }
 
-.lower{
+.lower {
     color: white;
     background-color: #232F3E;
-
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    white-space: nowrap; /* Prevents text from breaking onto unwanted lines */
 }
 
 .lower ul {
-      /* align-items: center; */
     display: flex;
-  gap: 6px;
+    flex-wrap: wrap; /* Option 1: Allows items to wrap to a new line on small screens */
+    gap: 6px;
     list-style: none;
- 
-}
-.lower ul li{
-  
-    padding: 8px;
-    cursor: pointer;
-}
-.lower ul li:first-child{
-    display: flex;
-    gap: 1.5px;
     align-items: center;
 }
 
-.lower li:hover{
+.lower ul li {
+    padding: 8px;
+    cursor: pointer;
+    flex-shrink: 1; /* Allows list items to shrink if necessary */
+    font-size: clamp(12px, 2vw, 14px); /* Dynamically shrinks text size on smaller screens */
+    border: 1px transparent solid; /* Prevents layout jump on hover */
+}
+
+.lower ul li:first-child {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.lower li:hover {
     border: 1px white solid;
 }

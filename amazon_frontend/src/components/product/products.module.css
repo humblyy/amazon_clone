@@ -1,28 +1,31 @@
-.productContainer{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-    margin: 50px 50px 50px 50px;
-    justify-items: center;
-    gap: 50px;
-    max-width: 1450px;
-}
-section{
-
-    margin: 0 auto;
-    box-sizing: border-box;
+section {
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-
-@media (max-width:720px) {
-   .productContainer img{
-    width: 80px !important;
-    height: auto;
-   }
-   .productContainer{
-flex-direction: column;
-    /* margin: 20px 20px 20px 20px; */
-   }
+.productContainer { 
+  display: grid; 
+  /* Using 1fr instead of auto-fill ensures cards scale down safely below 250px if needed */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+  margin: 50px; 
+  justify-items: center; 
+  gap: 50px; 
+  max-width: 1450px; 
 }
-   /* gap:10px;
-        margin: 20px;
-        width: 100%; */
+
+/* Mobile Screens (720px and below) */
+@media (max-width: 720px) { 
+  .productContainer {
+    /* 1. Fixed typo. 2. Dropped margins to 15px to save space. */
+    margin: 20px 15px; 
+    /* Reduces space between cards so they don't push things off-screen */
+    gap: 20px; 
+    /* Forces cards into a clean single column on mobile */
+    grid-template-columns: 1fr; 
+  }
+
+  .productContainer img { 
+    width: 80px !important; 
+    height: auto; 
+  } 
+}
