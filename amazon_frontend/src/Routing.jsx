@@ -25,7 +25,7 @@ function Routing() {
 
   return (
     <div>
-      {/* basename={window.location.hostname === 'localhost' ? '/' : '/amazon_clone'} */}
+     
       <Router
   basename={
     window.location.hostname === "localhost" || window.location.port === "3001"
