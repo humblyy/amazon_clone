@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Cart from './pages/cart/Cart'
 import Orders from './pages/orders/Orders'
@@ -25,7 +25,7 @@ function Routing() {
 
   return (
     <div>
-      <Router>
+      <Router basename={window.location.hostname === 'localhost' ? '/' : '/amazon_clone'}>
 
         <Routes>
           <Route path='/' element={<SharedLayout/>}>
