@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Cartcontext } from '../contextProvider/ContextProvider'
@@ -8,7 +8,7 @@ import { Cartcontext } from '../contextProvider/ContextProvider'
 
 function RouteProtector({children,message,redirect}) {
 const navigate=useNavigate()
-const [{user},dispatch]=useContext(Cartcontext)
+const [{user}]=useContext(Cartcontext)
 
 useEffect(()=>{
 if(!user){

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import  { useContext } from 'react'
 import classes from "./header.module.css"
 import us_flag from "../../../assets/images/us_flag.png"
 import { CiLocationOn } from "react-icons/ci";
@@ -14,7 +14,7 @@ import { auth } from '../../../Action/firebase';
 function Header() {
   // const [{basket},dispatch]=useContext(Cartcontext)
   //adding user by context from firebase
-  const [{user,basket},dispatch]=useContext(Cartcontext)
+  const [{user,basket}]=useContext(Cartcontext)
 
   //display total item on cart
   const totalItem=basket?.reduce((amount,item)=>{

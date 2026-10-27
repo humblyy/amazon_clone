@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { useEffect,useContext } from 'react'
 import { db } from '../../Action/firebase'
 import { Cartcontext } from '../../components/contextProvider/ContextProvider'
@@ -10,7 +10,7 @@ import LoadingEffect from '../../components/loadingEffect/LoadingEffect'
 
 function Orders() {
 const [isLoading,setIsLoading]=useState(false)
-const [{user},dispatch]=useContext(Cartcontext)
+const [{user}]=useContext(Cartcontext)
 const [orders,setOrders]=useState([])
 
 useEffect(()=>{

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Cartcontext } from '../../components/contextProvider/ContextProvider'
 import { useContext} from 'react'
 import SingleProduct from '../../components/product/singleProduct/SingleProduct'
@@ -11,7 +11,7 @@ import { FaMinus } from "react-icons/fa";
 
 
 function Cart() {
-  const [{basket,user},dispatch]=useContext(Cartcontext)
+  const [{basket},dispatch]=useContext(Cartcontext)
   const total=basket.reduce((amount,item)=>{
     return item.price * item.amount + amount 
   },0)

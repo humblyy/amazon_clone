@@ -14,7 +14,7 @@ function CarouselEffect() {
       >
       {
         img?.map((singleImage,index)=> {
-           return <img src={singleImage} alt='banner image' key={index}/>
+           return <img src={singleImage} alt='banner' key={index}/>
 
           } )
       }

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+
 import { Rating } from "@mui/material";
 import FormattedCurrency from '../../FormattedCurrency/FormattedCurrency'
 import classes from "./singleProduct.module.css"

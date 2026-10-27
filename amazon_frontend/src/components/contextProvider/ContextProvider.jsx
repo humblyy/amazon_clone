@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { useReducer } from 'react'
-import { useContext,createContext } from 'react'
+import { createContext } from 'react'
 export const Cartcontext=createContext()
 // const useMyContext=useContext(Cartcontext)
 
