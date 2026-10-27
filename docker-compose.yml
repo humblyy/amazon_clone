@@ -1,0 +1,46 @@
+
+
+# services:
+#   backend:
+#     build:
+#       context: ./amazon_backend
+#       dockerfile: Dockerfile
+#     environment:
+     
+#       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+#     ports:
+#       3000:3000
+#   client:
+#     build:
+#       context: ./amazon_frontend
+#       dockerfile: Dockerfile
+#       args:
+#         REACT_APP_API_KEY: ${REACT_APP_API_KEY}
+      
+#     depends_on:backend:
+#     ports: 3001:3001
+
+
+
+
+
+services:
+  backend:
+    build:
+      context: ./amazon_backend
+      dockerfile: Dockerfile
+    environment:
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+    ports:
+      - "3000:3000"
+
+  client:
+    build:
+      context: ./amazon_frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_KEY: ${REACT_APP_API_KEY}
+    depends_on:
+      - backend
+    ports:
+      - "3001:3001"

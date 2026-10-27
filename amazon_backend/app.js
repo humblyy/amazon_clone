@@ -1,9 +1,5 @@
 
 
-
-
-
-
 //code starts here
 const express=require("express")
 const dotenv=require("dotenv")

@@ -25,7 +25,12 @@ function Routing() {
 
   return (
     <div>
-      <Router basename={window.location.hostname === 'localhost' ? '/' : '/amazon_clone'}>
+      {/* basename={window.location.hostname === 'localhost' ? '/' : '/amazon_clone'} */}
+      <Router
+  basename={
+    window.location.hostname === "localhost" || window.location.port === "3001"
+? "/": "/amazon_clone"
+  }>
 
         <Routes>
           <Route path='/' element={<SharedLayout/>}>
